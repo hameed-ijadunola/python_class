@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Python — Modern, multi-path, self-paced curriculum</title>
+  <meta name="description" content="A modern, project-driven Python curriculum. 8 weeks, four learning paths, self-paced. From fundamentals to a real, deployed capstone." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:ital,wght@0,300..700;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===================== SIDEBAR (desktop) ===================== -->
+  <aside class="sidebar" aria-label="Primary">
+    <div class="sidebar__brand"><span class="dot">●</span> learn<strong>.py</strong></div>
+    <nav class="sidebar__nav" aria-label="Sections">
+      <a href="#overview" class="active"><span class="idx">01</span>Overview</a>
+      <a href="#paths"><span class="idx">02</span>Paths</a>
+      <a href="#curriculum"><span class="idx">03</span>Curriculum</a>
+      <a href="#assessment"><span class="idx">04</span>Assessment</a>
+      <a href="#tools"><span class="idx">05</span>Tools</a>
+      <a href="#philosophy"><span class="idx">06</span>Philosophy</a>
+    </nav>
+    <div class="sidebar__foot">
+      <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub repository">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </aside>
+
+  <!-- ===================== TOPBAR (mobile) ===================== -->
+  <header class="topbar">
+    <div class="topbar__brand"><span class="dot">●</span> learn.py</div>
+    <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false"><span></span></button>
+  </header>
+  <nav class="mobile-nav" aria-label="Mobile">
+    <a href="#overview"><span class="idx">01</span>Overview</a>
+    <a href="#paths"><span class="idx">02</span>Paths</a>
+    <a href="#curriculum"><span class="idx">03</span>Curriculum</a>
+    <a href="#assessment"><span class="idx">04</span>Assessment</a>
+    <a href="#tools"><span class="idx">05</span>Tools</a>
+    <a href="#philosophy"><span class="idx">06</span>Philosophy</a>
+  </nav>
+
+  <main class="main">
+
+    <!-- ===================== HERO ===================== -->
+    <section id="overview" class="hero">
+      <div class="hero__grid" aria-hidden="true"></div>
+      <div class="hero__inner">
+        <span class="hero__tag"><span class="pulse"></span> Enrolment open · self-paced</span>
+        <h1>Learn Python<span class="cursor">|</span></h1>
+        <p class="hero__sub">Modern. Multi-path. Self-paced. <span class="accent">8 weeks</span> to your first real project.</p>
+        <div class="hero__stats">
+          <span class="stat-pill"><b>8</b><span>weeks</span></span>
+          <span class="stat-pill"><b>4</b><span>learning paths</span></span>
+          <span class="stat-pill"><b>∞</b><span>project-driven</span></span>
+        </div>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;">
+          <a href="#paths" class="btn">Explore the curriculum <span class="arrow">→</span></a>
+          <a href="#curriculum" class="btn-ghost">See weeks 1–6</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== HOW IT WORKS ===================== -->
+    <section id="how" class="section reveal">
+      <p class="eyebrow">How it works</p>
+      <h2>Three phases. One branch point.</h2>
+      <p class="lede">Everyone builds the same foundation, then forks into a specialisation for the final sprint. The structure is fixed; the pace is yours.</p>
+
+      <div class="phase-grid">
+        <div class="phase-card stagger">
+          <p class="weeks">Weeks 1–3</p>
+          <div class="num">01</div>
+          <h3>Foundation</h3>
+          <p>Everyone starts here. Syntax, data structures, functions, the Python data model. By week 3 you write idiomatic Python and understand why it's idiomatic.</p>
+        </div>
+        <div class="phase-card stagger">
+          <p class="weeks">Weeks 4–6</p>
+          <div class="num">02</div>
+          <h3>Core Python</h3>
+          <p>OOP, testing, packaging, tooling. You move from writing scripts to building software — tested, structured, and publishable.</p>
+        </div>
+        <div class="phase-card stagger">
+          <p class="weeks">Weeks 7–8</p>
+          <div class="num">03</div>
+          <h3>Your path</h3>
+          <p>Choose a specialisation: Data &amp; AI, Web &amp; APIs, Automation, or Systems &amp; CS. Two weeks deep, ending in a deployed capstone.</p>
+        </div>
+      </div>
+
+      <div class="timeline" aria-hidden="true">
+        <div class="timeline__branchlabel">↳ branch point</div>
+        <div class="timeline__track"><div class="timeline__fill"></div></div>
+        <div class="timeline__nodes">
+          <div class="timeline__node lit"><span class="pt"></span><small>W1</small></div>
+          <div class="timeline__node lit"><span class="pt"></span><small>W2</small></div>
+          <div class="timeline__node lit"><span class="pt"></span><small>W3</small></div>
+          <div class="timeline__node lit"><span class="pt"></span><small>W4</small></div>
+          <div class="timeline__node lit"><span class="pt"></span><small>W5</small></div>
+          <div class="timeline__node lit"><span class="pt"></span><small>W6</small></div>
+          <div class="timeline__node branch"><span class="pt"></span><small>W7</small></div>
+          <div class="timeline__node"><span class="pt"></span><small>W8</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PATHS ===================== -->
+    <section id="paths" class="section reveal">
+      <p class="eyebrow">Learning paths</p>
+      <h2>Pick where you go deep.</h2>
+      <p class="lede">Four specialisations for weeks 7–8. Same foundation, four different destinations. Expand any path to see the day-by-day breakdown.</p>
+
+      <div class="filters" role="group" aria-label="Filter paths by level">
+        <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter-btn" data-filter="beginner" aria-pressed="false">Beginner-friendly</button>
+        <button class="filter-btn" data-filter="intermediate" aria-pressed="false">Intermediate</button>
+        <button class="filter-btn" data-filter="advanced" aria-pressed="false">Advanced</button>
+      </div>
+
+      <div class="path-grid">
+
+        <!-- PATH 1 — Data & AI -->
+        <article class="path-card lift stagger" data-level="intermediate">
+          <div class="path-card__head">
+            <span class="path-card__icon">▁▃▅▇</span>
+            <span class="level-badge" data-level="intermediate">intermediate</span>
+          </div>
+          <h3>Data &amp; AI</h3>
+          <p class="dur">Weeks 7–8</p>
+          <div class="tags">
+            <span class="tag">numpy</span><span class="tag">pandas</span><span class="tag">matplotlib</span><span class="tag">scikit-learn</span>
+          </div>
+          <ul class="outcomes">
+            <li>Wrangle real, messy datasets with pandas</li>
+            <li>Build and evaluate your first ML models</li>
+            <li>Communicate findings with clear visualisations</li>
+          </ul>
+          <div class="path-card__cta">
+            <button class="expand-btn" aria-expanded="false">Explore path <span class="chev">→</span></button>
+          </div>
+          <div class="path-detail">
+            <div class="path-detail__inner"><div class="path-detail__pad">
+              <div class="week-block">
+                <h4>Week 7 — Data wrangling</h4>
+                <ul class="day-list">
+                  <li><span class="day">Mon</span> NumPy arrays — vectorised operations, broadcasting</li>
+                  <li><span class="day">Tue</span> pandas Series &amp; DataFrames — load, inspect, clean</li>
+                  <li><span class="day">Wed</span> Groupby, merge, pivot — real dataset exercises</li>
+                  <li><span class="day">Thu</span> Matplotlib &amp; Seaborn — chart types, when to use each</li>
+                  <li><span class="day">Fri</span> Mini-project work + office hours</li>
+                </ul>
+                <div class="callout"><b>Project</b>Analyse a public dataset (e.g. NYC taxi data). Produce 5 charts and a written summary in a Jupyter notebook.</div>
+                <div class="callout self"><b>Self-learning</b>Find a Kaggle dataset that interests you. Explore it with <code>.describe()</code> and <code>.info()</code> before writing any analysis.</div>
+              </div>
+              <div class="week-block">
+                <h4>Week 8 — ML fundamentals</h4>
+                <ul class="day-list">
+                  <li><span class="day">Mon</span> scikit-learn API — fit, predict, score. The pipeline metaphor.</li>
+                  <li><span class="day">Tue</span> Regression — linear, polynomial, evaluation metrics (MAE, RMSE)</li>
+                  <li><span class="day">Wed</span> Classification — logistic regression, decision trees, confusion matrix</li>
+                  <li><span class="day">Thu</span> Cross-validation, train/test split, overfitting explained visually</li>
+                  <li><span class="day">Fri</span> Capstone scoping + peer review session</li>
+                </ul>
+                <div class="callout"><b>Project</b>Train a classifier on a labelled dataset. Beat a baseline. Write a model card explaining what it does and doesn't do.</div>
+                <div class="callout self"><b>Self-learning</b>Read the scikit-learn "Choosing the right estimator" flowchart. Justify your model choice in your README.</div>
+              </div>
+            </div></div>
+          </div>
+        </article>
+
+        <!-- PATH 2 — Web & APIs -->
+        <article class="path-card lift stagger" data-level="beginner">
+          <div class="path-card__head">
+            <span class="path-card__icon accent">{ }</span>
+            <span class="level-badge" data-level="beginner">beginner-friendly</span>
+          </div>
+          <h3>Web &amp; APIs</h3>
+          <p class="dur">Weeks 7–8</p>
+          <div class="tags">
+            <span class="tag">fastapi</span><span class="tag">pydantic</span><span class="tag">sqlite</span><span class="tag">docker</span>
+          </div>
+          <ul class="outcomes">
+            <li>Design and build a documented REST API</li>
+            <li>Add auth, tests, and containerisation</li>
+            <li>Deploy a live service to a public URL</li>
+          </ul>
+          <div class="path-card__cta">
+            <button class="expand-btn" aria-expanded="false">Explore path <span class="chev">→</span></button>
+          </div>
+          <div class="path-detail">
+            <div class="path-detail__inner"><div class="path-detail__pad">
+              <div class="week-block">
+                <h4>Week 7 — Building REST APIs</h4>
+                <ul class="day-list">
+                  <li><span class="day">Mon</span> HTTP verbs, status codes, REST principles — attack the concepts with curl</li>
+                  <li><span class="day">Tue</span> FastAPI hello world — routes, path params, query params, auto /docs</li>
+                  <li><span class="day">Wed</span> Pydantic models — request validation, response schemas, serialisation</li>
+                  <li><span class="day">Thu</span> Database integration — SQLite + SQLAlchemy ORM, dependency injection</li>
+                  <li><span class="day">Fri</span> Mini-project work + office hours</li>
+                </ul>
+                <div class="callout"><b>Project</b>A fully documented Recipe API with CRUD endpoints, Pydantic schemas, and a SQLite backend. The /docs UI must work.</div>
+                <div class="callout self"><b>Self-learning</b>Browse a real public API (Open-Meteo weather). Map its endpoints to REST principles. Call it with <code>httpx</code>.</div>
+              </div>
+              <div class="week-block">
+                <h4>Week 8 — Auth, testing, deployment</h4>
+                <ul class="day-list">
+                  <li><span class="day">Mon</span> Password hashing with bcrypt/passlib. JWTs — sign, verify, expire.</li>
+                  <li><span class="day">Tue</span> FastAPI auth flow — OAuth2PasswordBearer, protected routes, current_user</li>
+                  <li><span class="day">Wed</span> pytest + TestClient — test auth flows, fixtures, &gt;80% coverage target</li>
+                  <li><span class="day">Thu</span> Docker basics — Dockerfile, docker-compose with Postgres + Redis</li>
+                  <li><span class="day">Fri</span> Deploy to Render/Railway — live URL by end of day</li>
+                </ul>
+                <div class="callout"><b>Project</b>The Recipe API — with auth, tests, Docker — deployed to a public URL. Submit the live /docs link.</div>
+                <div class="callout self"><b>Self-learning</b>Break your deployed app intentionally. Read the logs to diagnose it. Document what you find.</div>
+              </div>
+            </div></div>
+          </div>
+        </article>
+
+        <!-- PATH 3 — Automation & Scripts -->
+        <article class="path-card lift stagger" data-level="beginner">
+          <div class="path-card__head">
+            <span class="path-card__icon accent">&gt;_</span>
+            <span class="level-badge" data-level="beginner">beginner-friendly</span>
+          </div>
+          <h3>Automation &amp; Scripts</h3>
+          <p class="dur">Weeks 7–8</p>
+          <div class="tags">
+            <span class="tag">click</span><span class="tag">requests</span><span class="tag">beautifulsoup4</span><span class="tag">schedule</span>
+          </div>
+          <ul class="outcomes">
+            <li>Build real CLI tools with subcommands</li>
+            <li>Scrape, parse, and transform web data</li>
+            <li>Ship an unattended scheduled pipeline</li>
+          </ul>
+          <div class="path-card__cta">
+            <button class="expand-btn" aria-expanded="false">Explore path <span class="chev">→</span></button>
+          </div>
+          <div class="path-detail">
+            <div class="path-detail__inner"><div class="path-detail__pad">
+              <div class="week-block">
+                <h4>Week 7 — CLI tools &amp; file automation</h4>
+                <ul class="day-list">
+                  <li><span class="day">Mon</span> argparse vs click — build a real CLI with subcommands and help text</li>
+                  <li><span class="day">Tue</span> File system automation — pathlib, shutil, glob, batch rename/organise</li>
+                  <li><span class="day">Wed</span> Working with data files — CSV, JSON, Excel (openpyxl), PDF extraction</li>
+                  <li><span class="day">Thu</span> Web scraping — requests + BeautifulSoup, ethics, robots.txt, rate limiting</li>
+                  <li><span class="day">Fri</span> Mini-project work + office hours</li>
+                </ul>
+                <div class="callout"><b>Project</b>A CLI tool that scrapes a public website and outputs a structured CSV report. Must handle errors gracefully and have a --help flag.</div>
+                <div class="callout self"><b>Self-learning</b>Find a repetitive task you do manually. Write a script that does it. Time both.</div>
+              </div>
+              <div class="week-block">
+                <h4>Week 8 — Bots, scheduling &amp; APIs</h4>
+                <ul class="day-list">
+                  <li><span class="day">Mon</span> schedule and APScheduler — run tasks at intervals, cron expressions</li>
+                  <li><span class="day">Tue</span> Telegram / Discord bot basics — bot tokens, message handlers, commands</li>
+                  <li><span class="day">Wed</span> Email automation — smtplib, email MIME, HTML templates, attachments</li>
+                  <li><span class="day">Thu</span> Putting it together — trigger → fetch → process → notify pipeline</li>
+                  <li><span class="day">Fri</span> Capstone scoping + demo prep</li>
+                </ul>
+                <div class="callout"><b>Project</b>An automated pipeline: scheduled fetch from an API → process/filter → send a formatted email or Telegram message. Must run unattended for 24 hours.</div>
+                <div class="callout self"><b>Self-learning</b>Read the Telegram bot API docs. Note how they handle webhooks vs polling — and why.</div>
+              </div>
+            </div></div>
+          </div>
+        </article>
+
+        <!-- PATH 4 — Systems & CS -->
+        <article class="path-card lift stagger" data-level="advanced">
+          <div class="path-card__head">
+            <span class="path-card__icon accent">O(n)</span>
+            <span class="level-badge" data-level="advanced">advanced</span>
+          </div>
+          <h3>Systems &amp; CS</h3>
+          <p class="dur">Weeks 7–8</p>
+          <div class="tags">
+            <span class="tag">algorithms</span><span class="tag">asyncio</span><span class="tag">concurrent.futures</span><span class="tag">pytest</span>
+          </div>
+          <ul class="outcomes">
+            <li>Implement core data structures from scratch</li>
+            <li>Reason about Big O and algorithm trade-offs</li>
+            <li>Build concurrent, benchmarked pipelines</li>
+          </ul>
+          <div class="path-card__cta">
+            <button class="expand-btn" aria-expanded="false">Explore path <span class="chev">→</span></button>
+          </div>
+          <div class="path-detail">
+            <div class="path-detail__inner"><div class="path-detail__pad">
+              <div class="week-block">
+                <h4>Week 7 — Data structures &amp; algorithms</h4>
+                <ul class="day-list">
+                  <li><span class="day">Mon</span> Big O intuition — arrays, linked lists, hash maps, trees with visual comparisons</li>
+                  <li><span class="day">Tue</span> Implement from scratch — stack, queue, linked list, binary search tree in Python</li>
+                  <li><span class="day">Wed</span> Sorting — insertion, merge, quicksort. When each is the right call.</li>
+                  <li><span class="day">Thu</span> Graph algorithms — BFS, DFS, Dijkstra with real use cases</li>
+                  <li><span class="day">Fri</span> Mini-project work + office hours (LeetCode-style problems)</li>
+                </ul>
+                <div class="callout"><b>Project</b>Solve 10 curated algorithm problems. For each: working solution, Big O analysis, and an alternative approach with trade-off notes.</div>
+                <div class="callout self"><b>Self-learning</b>Visualise one algorithm using Python turtle or matplotlib animations. Seeing it run cements it.</div>
+              </div>
+              <div class="week-block">
+                <h4>Week 8 — Concurrency &amp; architecture</h4>
+                <ul class="day-list">
+                  <li><span class="day">Mon</span> Threading vs multiprocessing vs asyncio — the mental model, GIL explained</li>
+                  <li><span class="day">Tue</span> asyncio deep dive — event loop, tasks, gather, real async HTTP client</li>
+                  <li><span class="day">Wed</span> concurrent.futures — ThreadPoolExecutor, ProcessPoolExecutor, when to use</li>
+                  <li><span class="day">Thu</span> Software design — SOLID principles, dependency injection, clean architecture in Python</li>
+                  <li><span class="day">Fri</span> Capstone scoping + code review session</li>
+                </ul>
+                <div class="callout"><b>Project</b>A concurrent data pipeline — fetch from 20+ URLs simultaneously with asyncio, process with multiprocessing, output a structured report. Benchmark against the synchronous version.</div>
+                <div class="callout self"><b>Self-learning</b>Profile your pipeline with cProfile. Find the bottleneck. Try to remove it.</div>
+              </div>
+            </div></div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===================== SHARED CURRICULUM ===================== -->
+    <section id="curriculum" class="section reveal">
+      <p class="eyebrow">Shared curriculum</p>
+      <h2>Weeks 1–6 — the foundation.</h2>
+      <p class="lede">Every student walks this path before branching. Each week ends with a project you submit and a self-learning prompt that pushes past the lesson.</p>
+
+      <div class="week-tabs" role="tablist" aria-label="Foundation weeks">
+        <button class="week-tab active" data-week="1" role="tab" aria-selected="true"><span class="wk">Week</span>01</button>
+        <button class="week-tab" data-week="2" role="tab" aria-selected="false"><span class="wk">Week</span>02</button>
+        <button class="week-tab" data-week="3" role="tab" aria-selected="false"><span class="wk">Week</span>03</button>
+        <button class="week-tab" data-week="4" role="tab" aria-selected="false"><span class="wk">Week</span>04</button>
+        <button class="week-tab" data-week="5" role="tab" aria-selected="false"><span class="wk">Week</span>05</button>
+        <button class="week-tab" data-week="6" role="tab" aria-selected="false"><span class="wk">Week</span>06</button>
+      </div>
+
+      <!-- W1 -->
+      <div class="week-panel active" data-week="1" role="tabpanel">
+        <div class="week-panel__head"><span class="num">01</span><h3>Python fundamentals</h3></div>
+        <ul class="topic-grid">
+          <li>Variables, types, operators, truthiness</li>
+          <li>Control flow: if/elif/else, for, while, break, continue</li>
+          <li>Functions: def, arguments, return, scope, default params</li>
+          <li>Lists, tuples, dicts, sets — when to use each</li>
+          <li>Reading and writing files, basic exception handling</li>
+          <li>Git: init, add, commit, push — GitHub account setup</li>
+        </ul>
+        <div class="code"><code>git init
+git add quiz.py
+git commit -m "First commit: CLI quiz app"
+git push -u origin main</code></div>
+        <div class="callout"><b>Project</b>CLI quiz app — reads questions from a JSON file, scores the user, saves results.</div>
+        <div class="callout self"><b>Self-learning</b>Set up your Python environment from scratch on a fresh machine. Document every step. You'll refer to this later.</div>
+      </div>
+
+      <!-- W2 -->
+      <div class="week-panel" data-week="2" role="tabpanel">
+        <div class="week-panel__head"><span class="num">02</span><h3>Data structures &amp; comprehensions</h3></div>
+        <ul class="topic-grid">
+          <li>List/dict/set comprehensions — readable vs clever</li>
+          <li>Nested structures — JSON-shaped data, traversal</li>
+          <li>String methods, f-strings, format spec mini-language</li>
+          <li>Sorting, filtering, map — functional style in Python</li>
+          <li>Modules: import, from, as, the module search path</li>
+          <li>Error handling: try/except/else/finally, custom exceptions</li>
+        </ul>
+        <div class="code"><code>clean = [row.strip().lower() for row in rows if row]
+totals = {k: sum(v) for k, v in groups.items()}</code></div>
+        <div class="callout"><b>Project</b>A data transformation pipeline — read a messy CSV, clean it, reshape it, write clean output.</div>
+        <div class="callout self"><b>Self-learning</b>Read PEP 8. Run flake8 on your week 1 project. Fix every warning.</div>
+      </div>
+
+      <!-- W3 -->
+      <div class="week-panel" data-week="3" role="tabpanel">
+        <div class="week-panel__head"><span class="num">03</span><h3>Functions &amp; the Python model</h3></div>
+        <ul class="topic-grid">
+          <li>First-class functions, closures, decorators (understanding, not just using)</li>
+          <li>*args and **kwargs — when they're the right tool</li>
+          <li>Generators and iterators — yield, lazy evaluation, memory efficiency</li>
+          <li>Context managers — with, __enter__, __exit__, contextlib</li>
+          <li>The data model — __repr__, __str__, __len__, __eq__ preview</li>
+          <li>Type hints: basic annotations, Optional, List, Dict from typing</li>
+        </ul>
+        <div class="code"><code>def retry(times):
+    def deco(fn):
+        def wrap(*args, **kwargs):
+            for _ in range(times):
+                try: return fn(*args, **kwargs)
+                except Exception: continue
+        return wrap
+    return deco</code></div>
+        <div class="callout"><b>Project</b>A decorator library — write 5 decorators (timer, retry, cache, log_calls, validate_types). Test each one.</div>
+        <div class="callout self"><b>Self-learning</b>Read the Python docs on the data model. Pick one dunder method not covered in class and implement it in a toy class.</div>
+      </div>
+
+      <!-- W4 -->
+      <div class="week-panel" data-week="4" role="tabpanel">
+        <div class="week-panel__head"><span class="num">04</span><h3>Object-oriented programming</h3></div>
+        <ul class="topic-grid">
+          <li>Classes, instances, __init__, self</li>
+          <li>Instance vs class vs static methods</li>
+          <li>Inheritance, super(), method resolution order (MRO)</li>
+          <li>Encapsulation — name mangling, @property, getters/setters</li>
+          <li>Abstract base classes — abc module</li>
+          <li>Composition vs inheritance — when to favour each</li>
+        </ul>
+        <div class="code"><code>class Card:
+    def __init__(self, rank, suit):
+        self.rank, self.suit = rank, suit
+    def __repr__(self):
+        return f"{self.rank}{self.suit}"</code></div>
+        <div class="callout"><b>Project</b>A card game engine (e.g. Blackjack) built with OOP. Card, Deck, Hand, Player, Game classes. Fully playable in the terminal.</div>
+        <div class="callout self"><b>Self-learning</b>Find an example of inheritance misuse in the wild. Refactor it to composition.</div>
+      </div>
+
+      <!-- W5 -->
+      <div class="week-panel" data-week="5" role="tabpanel">
+        <div class="week-panel__head"><span class="num">05</span><h3>Testing &amp; tooling</h3></div>
+        <ul class="topic-grid">
+          <li>pytest fundamentals — test discovery, assert, fixtures</li>
+          <li>Parametrize, monkeypatch, tmp_path</li>
+          <li>Test-driven development: write the test first for a real feature</li>
+          <li>Coverage — what it measures, why 100% isn't the goal</li>
+          <li>Virtual environments — venv, pip, requirements.txt, pyproject.toml</li>
+          <li>Linting and formatting — Ruff (replaces flake8 + black + isort)</li>
+        </ul>
+        <div class="code"><code>import pytest
+
+@pytest.mark.parametrize("hand,expected", [(21, True), (22, False)])
+def test_is_blackjack(hand, expected):
+    assert is_blackjack(hand) is expected</code></div>
+        <div class="callout"><b>Project</b>Retroactively test week 4's card game to &gt;80% coverage using TDD for one new feature.</div>
+        <div class="callout self"><b>Self-learning</b>Write a test before you write the function. Notice how it changes your thinking about the API.</div>
+      </div>
+
+      <!-- W6 -->
+      <div class="week-panel" data-week="6" role="tabpanel">
+        <div class="week-panel__head"><span class="num">06</span><h3>Packaging &amp; the ecosystem</h3></div>
+        <ul class="topic-grid">
+          <li>Project structure — src layout vs flat layout</li>
+          <li>pyproject.toml — setuptools, build, publish to TestPyPI</li>
+          <li>Virtual envs at scale — pipenv vs poetry vs uv</li>
+          <li>The standard library tour — itertools, collections, functools, pathlib, datetime</li>
+          <li>Logging — logging module, handlers, formatters, levels</li>
+          <li>Environment variables — os.environ, python-dotenv, config patterns</li>
+        </ul>
+        <div class="code"><code>python -m build
+python -m twine upload --repository testpypi dist/*
+pip install -i https://test.pypi.org/simple/ my-utility</code></div>
+        <div class="callout"><b>Project</b>Package and publish a small utility library to TestPyPI. Must have a README, tests, and a CLI entry point.</div>
+        <div class="callout self"><b>Self-learning</b>Install your own package in a fresh virtualenv and use it as if you were a stranger. What breaks? Fix it.</div>
+      </div>
+    </section>
+
+    <!-- ===================== ASSESSMENT ===================== -->
+    <section id="assessment" class="section reveal">
+      <p class="eyebrow">Assessment &amp; grading</p>
+      <h2>How you're measured.</h2>
+      <p class="lede">Weighted toward doing and reflecting, not toward exams. Everything is graded on real work you can put in a portfolio.</p>
+
+      <div class="assess">
+        <table class="assess-table">
+          <thead>
+            <tr><th>Component</th><th>Weight</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Weekly mini-projects</td><td class="w">30%</td>
+              <td><p>Submitted each Sunday. Auto-graded tests + human style review. One resubmit allowed.</p></td>
+            </tr>
+            <tr>
+              <td>Peer code review</td><td class="w">20%</td>
+              <td><p>Review two peers per sprint. Graded on feedback quality, not just your code.</p></td>
+            </tr>
+            <tr>
+              <td>Learning log</td><td class="w">10%</td>
+              <td><p>Short weekly note: what clicked, what didn't, one thing looked up.</p></td>
+            </tr>
+            <tr>
+              <td>Capstone project</td><td class="w">40%</td>
+              <td><p>Real, deployed project. Rubric: functionality 40%, code quality 25%, docs 20%, demo 15%.</p></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="pie-wrap">
+          <svg width="200" height="200" viewBox="0 0 200 200" role="img" aria-label="Grade weighting pie chart: capstone 40%, mini-projects 30%, peer review 20%, learning log 10%">
+            <!-- r=80, circumference ≈ 502.65 -->
+            <circle cx="100" cy="100" r="80" fill="none" stroke="#1a1a1a" stroke-width="34"/>
+            <!-- Capstone 40% -->
+            <circle cx="100" cy="100" r="80" fill="none" stroke="#00e676" stroke-width="34"
+              stroke-dasharray="201.06 502.65" stroke-dashoffset="0"/>
+            <!-- Mini-projects 30% -->
+            <circle cx="100" cy="100" r="80" fill="none" stroke="#00b85f" stroke-width="34"
+              stroke-dasharray="150.80 502.65" stroke-dashoffset="-201.06"/>
+            <!-- Peer review 20% -->
+            <circle cx="100" cy="100" r="80" fill="none" stroke="#7aa2f7" stroke-width="34"
+              stroke-dasharray="100.53 502.65" stroke-dashoffset="-351.86"/>
+            <!-- Learning log 10% -->
+            <circle cx="100" cy="100" r="80" fill="none" stroke="#ff9e64" stroke-width="34"
+              stroke-dasharray="50.27 502.65" stroke-dashoffset="-452.39"/>
+          </svg>
+          <ul class="pie-legend">
+            <li><span class="sw" style="background:#00e676"></span> Capstone <b>40%</b></li>
+            <li><span class="sw" style="background:#00b85f"></span> Mini-projects <b>30%</b></li>
+            <li><span class="sw" style="background:#7aa2f7"></span> Peer review <b>20%</b></li>
+            <li><span class="sw" style="background:#ff9e64"></span> Learning log <b>10%</b></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TOOLS ===================== -->
+    <section id="tools" class="section reveal">
+      <p class="eyebrow">Tools &amp; stack</p>
+      <h2>What you'll work with.</h2>
+      <p class="lede">Industry-standard tooling from day one. You learn the tools professionals actually reach for — not toy substitutes.</p>
+
+      <div class="tool-grid">
+        <div class="tool-card stagger"><div class="ic">&lt;/&gt;</div><h3>VS Code</h3><p>Editor. With Pylance, Ruff, Jupyter extensions.</p></div>
+        <div class="tool-card stagger"><div class="ic">✦</div><h3>GitHub Copilot</h3><p>AI assist. Taught alongside code literacy, not as a crutch.</p></div>
+        <div class="tool-card stagger"><div class="ic">◰</div><h3>JupyterLab</h3><p>Notebooks. For data path; concept exploration for all.</p></div>
+        <div class="tool-card stagger"><div class="ic">⎇</div><h3>GitHub</h3><p>Version control. PRs, issues, Actions from week 1.</p></div>
+        <div class="tool-card stagger"><div class="ic">✓</div><h3>pytest</h3><p>Testing. TDD mindset introduced in week 5.</p></div>
+        <div class="tool-card stagger"><div class="ic">▣</div><h3>Docker</h3><p>Containers. Used in Web &amp; APIs path, demoed for all.</p></div>
+        <div class="tool-card stagger"><div class="ic">⟳</div><h3>Anki</h3><p>Spaced repetition. For syntax and concept retention.</p></div>
+        <div class="tool-card stagger"><div class="ic">◇</div><h3>Discord</h3><p>Community. Channels by track, study groups, office hours.</p></div>
+      </div>
+    </section>
+
+    <!-- ===================== PHILOSOPHY ===================== -->
+    <section id="philosophy" class="section reveal">
+      <p class="eyebrow">Self-learning philosophy</p>
+      <h2>How we think about learning.</h2>
+      <p class="lede">Three principles run through every week. They're not features — they're the shape of how you'll work after the course ends.</p>
+
+      <div class="philo-grid">
+        <div class="philo-card stagger">
+          <span class="bignum">1</span>
+          <h3><span class="quote">"Read the source."</span></h3>
+          <p>Every week has a primary resource that is the authoritative docs, not a tutorial. You learn to navigate real documentation.</p>
+        </div>
+        <div class="philo-card stagger">
+          <span class="bignum">2</span>
+          <h3><span class="quote">"Break it first."</span></h3>
+          <p>Self-learning prompts always end with intentionally misusing or stressing the concept. Understanding failure modes is understanding.</p>
+        </div>
+        <div class="philo-card stagger">
+          <span class="bignum">3</span>
+          <h3><span class="quote">"Build the habit."</span></h3>
+          <p>The learning log isn't graded for quality — it's graded for consistency. Reflection compounds.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <h3>learn.py</h3>
+          <p>Modern, multi-path, self-paced Python. 8 weeks to your first real project.</p>
+        </div>
+        <div class="footer__links">
+          <a href="https://github.com" target="_blank" rel="noopener">GitHub repo</a>
+          <a href="https://discord.com" target="_blank" rel="noopener">Discord</a>
+          <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener">License (MIT)</a>
+        </div>
+      </div>
+      <p class="footer__sig">Built with <span class="accent">Python</span>. Taught with care.</p>
+    </footer>
+
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
