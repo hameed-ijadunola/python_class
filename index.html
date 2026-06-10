@@ -4,7 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Learn Python — Modern, multi-path, self-paced curriculum</title>
-  <meta name="description" content="A modern, project-driven Python curriculum. 8 weeks, four learning paths, self-paced. From fundamentals to a real, deployed capstone." />
+  <meta name="description" content="A modern, project-driven Python curriculum. 8 weeks, four learning paths, self-paced. Every topic links to the best free article, doc, or video to learn it on your own machine." />
+
+  <!-- Favicon (inline SVG — no extra file, works offline) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d0d0d'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='20' font-weight='700' text-anchor='middle' fill='%2300e676'%3E%3E_%3C/text%3E%3C/svg%3E" />
+
+  <!-- Social / Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="learn.py — a self-contained Python curriculum" />
+  <meta property="og:description" content="8 weeks · 4 learning paths · self-paced. Every topic links to the best free resource to learn it." />
+  <meta name="twitter:card" content="summary" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,6 +21,18 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:ital,wght@0,300..700;1,400&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Apply saved/preferred theme before first paint (no flash) -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("theme");
+        var theme = saved ||
+          (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+        if (theme === "light") document.documentElement.setAttribute("data-theme", "light");
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
 
@@ -22,12 +43,18 @@
       <a href="#overview" class="active"><span class="idx">01</span>Overview</a>
       <a href="#paths"><span class="idx">02</span>Paths</a>
       <a href="#curriculum"><span class="idx">03</span>Curriculum</a>
-      <a href="#assessment"><span class="idx">04</span>Assessment</a>
-      <a href="#tools"><span class="idx">05</span>Tools</a>
-      <a href="#philosophy"><span class="idx">06</span>Philosophy</a>
+      <a href="#library"><span class="idx">04</span>Library</a>
+      <a href="#assessment"><span class="idx">05</span>Assessment</a>
+      <a href="#tools"><span class="idx">06</span>Tools</a>
+      <a href="#philosophy"><span class="idx">07</span>Philosophy</a>
     </nav>
     <div class="sidebar__foot">
-      <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub repository">
+      <button class="theme-toggle" type="button" aria-label="Toggle colour theme">
+        <span class="icon icon-dark" aria-hidden="true">☀</span>
+        <span class="icon icon-light" aria-hidden="true">☾</span>
+        <span class="label">Theme</span>
+      </button>
+      <a href="https://github.com/hameed-ijadunola/python_class" target="_blank" rel="noopener" aria-label="GitHub repository">
         <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
         GitHub
       </a>
@@ -37,15 +64,22 @@
   <!-- ===================== TOPBAR (mobile) ===================== -->
   <header class="topbar">
     <div class="topbar__brand"><span class="dot">●</span> learn.py</div>
-    <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false"><span></span></button>
+    <div class="topbar__actions">
+      <button class="theme-toggle theme-toggle--top" type="button" aria-label="Toggle colour theme">
+        <span class="icon icon-dark" aria-hidden="true">☀</span>
+        <span class="icon icon-light" aria-hidden="true">☾</span>
+      </button>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false"><span></span></button>
+    </div>
   </header>
   <nav class="mobile-nav" aria-label="Mobile">
     <a href="#overview"><span class="idx">01</span>Overview</a>
     <a href="#paths"><span class="idx">02</span>Paths</a>
     <a href="#curriculum"><span class="idx">03</span>Curriculum</a>
-    <a href="#assessment"><span class="idx">04</span>Assessment</a>
-    <a href="#tools"><span class="idx">05</span>Tools</a>
-    <a href="#philosophy"><span class="idx">06</span>Philosophy</a>
+    <a href="#library"><span class="idx">04</span>Library</a>
+    <a href="#assessment"><span class="idx">05</span>Assessment</a>
+    <a href="#tools"><span class="idx">06</span>Tools</a>
+    <a href="#philosophy"><span class="idx">07</span>Philosophy</a>
   </nav>
 
   <main class="main">
@@ -159,6 +193,7 @@
                 </ul>
                 <div class="callout"><b>Project</b>Analyse a public dataset (e.g. NYC taxi data). Produce 5 charts and a written summary in a Jupyter notebook.</div>
                 <div class="callout self"><b>Self-learning</b>Find a Kaggle dataset that interests you. Explore it with <code>.describe()</code> and <code>.info()</code> before writing any analysis.</div>
+                <div class="resources" data-path="data-ai" data-week="7"></div>
               </div>
               <div class="week-block">
                 <h4>Week 8 — ML fundamentals</h4>
@@ -171,6 +206,7 @@
                 </ul>
                 <div class="callout"><b>Project</b>Train a classifier on a labelled dataset. Beat a baseline. Write a model card explaining what it does and doesn't do.</div>
                 <div class="callout self"><b>Self-learning</b>Read the scikit-learn "Choosing the right estimator" flowchart. Justify your model choice in your README.</div>
+                <div class="resources" data-path="data-ai" data-week="8"></div>
               </div>
             </div></div>
           </div>
@@ -208,6 +244,7 @@
                 </ul>
                 <div class="callout"><b>Project</b>A fully documented Recipe API with CRUD endpoints, Pydantic schemas, and a SQLite backend. The /docs UI must work.</div>
                 <div class="callout self"><b>Self-learning</b>Browse a real public API (Open-Meteo weather). Map its endpoints to REST principles. Call it with <code>httpx</code>.</div>
+                <div class="resources" data-path="web-apis" data-week="7"></div>
               </div>
               <div class="week-block">
                 <h4>Week 8 — Auth, testing, deployment</h4>
@@ -220,6 +257,7 @@
                 </ul>
                 <div class="callout"><b>Project</b>The Recipe API — with auth, tests, Docker — deployed to a public URL. Submit the live /docs link.</div>
                 <div class="callout self"><b>Self-learning</b>Break your deployed app intentionally. Read the logs to diagnose it. Document what you find.</div>
+                <div class="resources" data-path="web-apis" data-week="8"></div>
               </div>
             </div></div>
           </div>
@@ -257,6 +295,7 @@
                 </ul>
                 <div class="callout"><b>Project</b>A CLI tool that scrapes a public website and outputs a structured CSV report. Must handle errors gracefully and have a --help flag.</div>
                 <div class="callout self"><b>Self-learning</b>Find a repetitive task you do manually. Write a script that does it. Time both.</div>
+                <div class="resources" data-path="automation" data-week="7"></div>
               </div>
               <div class="week-block">
                 <h4>Week 8 — Bots, scheduling &amp; APIs</h4>
@@ -269,6 +308,7 @@
                 </ul>
                 <div class="callout"><b>Project</b>An automated pipeline: scheduled fetch from an API → process/filter → send a formatted email or Telegram message. Must run unattended for 24 hours.</div>
                 <div class="callout self"><b>Self-learning</b>Read the Telegram bot API docs. Note how they handle webhooks vs polling — and why.</div>
+                <div class="resources" data-path="automation" data-week="8"></div>
               </div>
             </div></div>
           </div>
@@ -306,6 +346,7 @@
                 </ul>
                 <div class="callout"><b>Project</b>Solve 10 curated algorithm problems. For each: working solution, Big O analysis, and an alternative approach with trade-off notes.</div>
                 <div class="callout self"><b>Self-learning</b>Visualise one algorithm using Python turtle or matplotlib animations. Seeing it run cements it.</div>
+                <div class="resources" data-path="systems-cs" data-week="7"></div>
               </div>
               <div class="week-block">
                 <h4>Week 8 — Concurrency &amp; architecture</h4>
@@ -318,6 +359,7 @@
                 </ul>
                 <div class="callout"><b>Project</b>A concurrent data pipeline — fetch from 20+ URLs simultaneously with asyncio, process with multiprocessing, output a structured report. Benchmark against the synchronous version.</div>
                 <div class="callout self"><b>Self-learning</b>Profile your pipeline with cProfile. Find the bottleneck. Try to remove it.</div>
+                <div class="resources" data-path="systems-cs" data-week="8"></div>
               </div>
             </div></div>
           </div>
@@ -331,6 +373,36 @@
       <p class="eyebrow">Shared curriculum</p>
       <h2>Weeks 1–6 — the foundation.</h2>
       <p class="lede">Every student walks this path before branching. Each week ends with a project you submit and a self-learning prompt that pushes past the lesson.</p>
+
+      <!-- Start here — get Python running on your own machine -->
+      <div class="start-here">
+        <div class="start-here__label"><span class="pulse"></span> Start here</div>
+        <h3>Get Python running on your machine.</h3>
+        <p>Before week 1, set up your environment. These three are all you need — pick your OS, follow along, and don't skip "Add Python to PATH".</p>
+        <ul class="start-here__links">
+          <li>
+            <a href="https://realpython.com/installing-python/" target="_blank" rel="noopener">
+              <span class="res-badge" data-type="article" aria-hidden="true">📖</span>
+              <span class="start-here__t">Install Python (Win / macOS / Linux)<small>Real Python</small></span>
+              <span class="arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://code.visualstudio.com/docs/python/python-tutorial" target="_blank" rel="noopener">
+              <span class="res-badge" data-type="docs" aria-hidden="true">📄</span>
+              <span class="start-here__t">Set up VS Code for Python<small>code.visualstudio.com</small></span>
+              <span class="arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" target="_blank" rel="noopener">
+              <span class="res-badge" data-type="book" aria-hidden="true">📘</span>
+              <span class="start-here__t">Install Git &amp; make your first commit<small>Pro Git (free book)</small></span>
+              <span class="arrow">→</span>
+            </a>
+          </li>
+        </ul>
+      </div>
 
       <div class="week-tabs" role="tablist" aria-label="Foundation weeks">
         <button class="week-tab active" data-week="1" role="tab" aria-selected="true"><span class="wk">Week</span>01</button>
@@ -358,6 +430,7 @@ git commit -m "First commit: CLI quiz app"
 git push -u origin main</code></div>
         <div class="callout"><b>Project</b>CLI quiz app — reads questions from a JSON file, scores the user, saves results.</div>
         <div class="callout self"><b>Self-learning</b>Set up your Python environment from scratch on a fresh machine. Document every step. You'll refer to this later.</div>
+        <div class="resources" data-week="1"></div>
       </div>
 
       <!-- W2 -->
@@ -375,6 +448,7 @@ git push -u origin main</code></div>
 totals = {k: sum(v) for k, v in groups.items()}</code></div>
         <div class="callout"><b>Project</b>A data transformation pipeline — read a messy CSV, clean it, reshape it, write clean output.</div>
         <div class="callout self"><b>Self-learning</b>Read PEP 8. Run flake8 on your week 1 project. Fix every warning.</div>
+        <div class="resources" data-week="2"></div>
       </div>
 
       <!-- W3 -->
@@ -398,6 +472,7 @@ totals = {k: sum(v) for k, v in groups.items()}</code></div>
     return deco</code></div>
         <div class="callout"><b>Project</b>A decorator library — write 5 decorators (timer, retry, cache, log_calls, validate_types). Test each one.</div>
         <div class="callout self"><b>Self-learning</b>Read the Python docs on the data model. Pick one dunder method not covered in class and implement it in a toy class.</div>
+        <div class="resources" data-week="3"></div>
       </div>
 
       <!-- W4 -->
@@ -418,6 +493,7 @@ totals = {k: sum(v) for k, v in groups.items()}</code></div>
         return f"{self.rank}{self.suit}"</code></div>
         <div class="callout"><b>Project</b>A card game engine (e.g. Blackjack) built with OOP. Card, Deck, Hand, Player, Game classes. Fully playable in the terminal.</div>
         <div class="callout self"><b>Self-learning</b>Find an example of inheritance misuse in the wild. Refactor it to composition.</div>
+        <div class="resources" data-week="4"></div>
       </div>
 
       <!-- W5 -->
@@ -438,6 +514,7 @@ def test_is_blackjack(hand, expected):
     assert is_blackjack(hand) is expected</code></div>
         <div class="callout"><b>Project</b>Retroactively test week 4's card game to &gt;80% coverage using TDD for one new feature.</div>
         <div class="callout self"><b>Self-learning</b>Write a test before you write the function. Notice how it changes your thinking about the API.</div>
+        <div class="resources" data-week="5"></div>
       </div>
 
       <!-- W6 -->
@@ -456,6 +533,28 @@ python -m twine upload --repository testpypi dist/*
 pip install -i https://test.pypi.org/simple/ my-utility</code></div>
         <div class="callout"><b>Project</b>Package and publish a small utility library to TestPyPI. Must have a README, tests, and a CLI entry point.</div>
         <div class="callout self"><b>Self-learning</b>Install your own package in a fresh virtualenv and use it as if you were a stranger. What breaks? Fix it.</div>
+        <div class="resources" data-week="6"></div>
+      </div>
+    </section>
+
+    <!-- ===================== LIBRARY ===================== -->
+    <section id="library" class="section reveal">
+      <p class="eyebrow">Resource library</p>
+      <h2>Every resource, in one place.</h2>
+      <p class="lede">The whole curriculum's reading and watching list — hand-picked, all free, no paywalls. Filter by type, then go learn it on your own machine. <span class="lib-count" aria-live="polite"></span></p>
+
+      <div class="filters" role="group" aria-label="Filter resources by type">
+        <button class="filter-btn active" data-rfilter="all" aria-pressed="true">All</button>
+        <button class="filter-btn" data-rfilter="docs" aria-pressed="false">Docs</button>
+        <button class="filter-btn" data-rfilter="article" aria-pressed="false">Articles</button>
+        <button class="filter-btn" data-rfilter="video" aria-pressed="false">Videos</button>
+        <button class="filter-btn" data-rfilter="course" aria-pressed="false">Courses</button>
+        <button class="filter-btn" data-rfilter="book" aria-pressed="false">Books</button>
+      </div>
+
+      <div class="lib-grid" id="lib-grid">
+        <!-- populated by js/main.js from window.RESOURCES -->
+        <p class="lib-fallback">Enable JavaScript to browse the full resource library, or open any week or path above to see its resources inline.</p>
       </div>
     </section>
 
@@ -493,7 +592,7 @@ pip install -i https://test.pypi.org/simple/ my-utility</code></div>
         <div class="pie-wrap">
           <svg width="200" height="200" viewBox="0 0 200 200" role="img" aria-label="Grade weighting pie chart: capstone 40%, mini-projects 30%, peer review 20%, learning log 10%">
             <!-- r=80, circumference ≈ 502.65 -->
-            <circle cx="100" cy="100" r="80" fill="none" stroke="#1a1a1a" stroke-width="34"/>
+            <circle class="pie-track" cx="100" cy="100" r="80" fill="none" stroke="#1a1a1a" stroke-width="34"/>
             <!-- Capstone 40% -->
             <circle cx="100" cy="100" r="80" fill="none" stroke="#00e676" stroke-width="34"
               stroke-dasharray="201.06 502.65" stroke-dashoffset="0"/>
@@ -568,8 +667,8 @@ pip install -i https://test.pypi.org/simple/ my-utility</code></div>
           <p>Modern, multi-path, self-paced Python. 8 weeks to your first real project.</p>
         </div>
         <div class="footer__links">
-          <a href="https://github.com" target="_blank" rel="noopener">GitHub repo</a>
-          <a href="https://discord.com" target="_blank" rel="noopener">Discord</a>
+          <a href="https://github.com/hameed-ijadunola/python_class" target="_blank" rel="noopener">GitHub repo</a>
+          <a href="https://github.com/hameed-ijadunola/python_class/discussions" target="_blank" rel="noopener">Discussions</a>
           <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener">License (MIT)</a>
         </div>
       </div>
@@ -578,6 +677,7 @@ pip install -i https://test.pypi.org/simple/ my-utility</code></div>
 
   </main>
 
+  <script src="js/resources.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

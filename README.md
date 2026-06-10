@@ -20,6 +20,7 @@ It works two ways:
 ├── css/
 │   └── style.css           ← all styling and design tokens
 ├── js/
+│   ├── resources.js        ← curated learning resources (the "library" data)
 │   └── main.js             ← all interactivity (vanilla JS)
 ├── README.md
 └── .github/
@@ -30,7 +31,25 @@ It works two ways:
 ## Sections
 
 Overview (hero) · How it works · Learning paths · Shared curriculum (weeks 1–6)
-· Assessment & grading · Tools & stack · Self-learning philosophy · Footer.
+· **Resource library** · Assessment & grading · Tools & stack · Self-learning
+philosophy · Footer.
+
+## The resource library — what makes it self-contained
+
+The site doesn't just *describe* the curriculum; every topic links to the
+**single best free resource** to actually learn it on your own machine
+(official docs, a Real Python article, a Corey Schafer / ArjanCodes video, or a
+free book like *Automate the Boring Stuff*). Those links live in one file —
+[`js/resources.js`](js/resources.js) — and surface in three places:
+
+- **Inline** under each foundation week (1–6) and each path week (7–8).
+- **A featured video** per topic group, rendered as a click-to-play thumbnail
+  that only loads YouTube when you press play (fast + privacy-friendly).
+- **The Resource Library** section — every resource in one filterable grid
+  (filter by Docs / Articles / Videos / Courses / Books).
+
+A "Start here" card at the top of the curriculum points first-timers at Python
++ VS Code + Git setup before week 1.
 
 ## Interactivity
 
@@ -110,6 +129,46 @@ To add a week tab in the shared curriculum:
 2. Add a matching `<div class="week-panel" data-week="7" ...>` with the content.
 
 The tab logic in `js/main.js` wires them up automatically by `data-week`.
+
+### Adding or editing a learning resource
+
+All resources live in [`js/resources.js`](js/resources.js) as one global
+`window.RESOURCES` object — no build step, no `fetch()` (so it still works from
+`file://`). The shape:
+
+```js
+window.RESOURCES = {
+  weeks: { 1: TopicGroup, … 6: TopicGroup },
+  paths: {
+    "data-ai": { 7: TopicGroup, 8: TopicGroup },
+    "web-apis": { … }, "automation": { … }, "systems-cs": { … }
+  }
+};
+```
+
+Each `TopicGroup` is `{ featuredVideo?: "<youtube-id>", items: ResourceItem[] }`,
+and each item looks like:
+
+```js
+{
+  title:  "Primer on Python Decorators",
+  source: "Real Python",
+  type:   "article",   // article | docs | video | course | book → sets the icon
+  url:    "https://realpython.com/primer-on-python-decorators/",
+  note:   "Builds decorators from closures up.",  // optional, one short line
+  start:  true          // optional — marks the one "★ start" resource per group
+}
+```
+
+To add a resource: drop a new object into the right group's `items` array.
+It renders inline under that week/path **and** in the Library automatically —
+nothing else to wire up. The renderer, video facade, and Library filters all
+live in `js/main.js` (search for `RESOURCES`). Inline placeholders in
+`index.html` are `<div class="resources" data-week="N">` (foundation) and
+`<div class="resources" data-path="slug" data-week="N">` (paths).
+
+> **Curation rule of thumb:** official docs → authoritative tutorial → quality
+> free video → free book. Keep it to ~4 per group, all free, no paywalls.
 
 ### Updating the pie chart
 

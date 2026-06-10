@@ -4,6 +4,20 @@
 (function () {
   "use strict";
 
+  /* ----- Theme toggle (persisted, OS-aware) ------------------------------ */
+  const root = document.documentElement;
+  const setTheme = (theme) => {
+    if (theme === "light") root.setAttribute("data-theme", "light");
+    else root.removeAttribute("data-theme");
+    try { localStorage.setItem("theme", theme); } catch (e) {}
+  };
+  document.querySelectorAll(".theme-toggle").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const isLight = root.getAttribute("data-theme") === "light";
+      setTheme(isLight ? "dark" : "light");
+    });
+  });
+
   /* ----- Mobile nav ------------------------------------------------------ */
   const body = document.body;
   const hamburger = document.querySelector(".hamburger");
@@ -150,4 +164,214 @@
     );
     sections.forEach((s) => spy.observe(s));
   }
+
+  /* ----- Curated resources (from js/resources.js) ------------------------ */
+  const DATA = window.RESOURCES;
+
+  const TYPE_BADGE = {
+    article: "📖",
+    docs: "📄",
+    video: "🎥",
+    course: "🎓",
+    book: "📘",
+  };
+  const TYPE_LABEL = {
+    article: "Article",
+    docs: "Docs",
+    video: "Video",
+    course: "Course",
+    book: "Book",
+  };
+  const PATH_LABEL = {
+    "data-ai": "Data & AI",
+    "web-apis": "Web & APIs",
+    automation: "Automation",
+    "systems-cs": "Systems & CS",
+  };
+
+  // Build the DOM for a single resource row.
+  function resourceItem(item, withOrigin) {
+    const li = document.createElement("li");
+    li.className = "res-item";
+    li.dataset.type = item.type;
+
+    const a = document.createElement("a");
+    a.href = item.url;
+    a.target = "_blank";
+    a.rel = "noopener";
+
+    const badge = document.createElement("span");
+    badge.className = "res-badge";
+    badge.dataset.type = item.type;
+    badge.setAttribute("aria-hidden", "true");
+    badge.textContent = TYPE_BADGE[item.type] || "🔗";
+
+    const main = document.createElement("span");
+    main.className = "res-main";
+
+    const title = document.createElement("span");
+    title.className = "res-title";
+    title.textContent = item.title;
+    if (item.start) {
+      const chip = document.createElement("span");
+      chip.className = "res-start";
+      chip.textContent = "★ start";
+      title.appendChild(document.createTextNode(" "));
+      title.appendChild(chip);
+    }
+
+    const meta = document.createElement("span");
+    meta.className = "res-meta";
+    const originTxt = withOrigin ? withOrigin + " · " : "";
+    meta.textContent = originTxt + item.source + " · " + (TYPE_LABEL[item.type] || item.type);
+
+    main.appendChild(title);
+    main.appendChild(meta);
+    if (item.note) {
+      const note = document.createElement("span");
+      note.className = "res-note";
+      note.textContent = item.note;
+      main.appendChild(note);
+    }
+
+    const arrow = document.createElement("span");
+    arrow.className = "arrow";
+    arrow.setAttribute("aria-hidden", "true");
+    arrow.textContent = "→";
+
+    a.appendChild(badge);
+    a.appendChild(main);
+    a.appendChild(arrow);
+    li.appendChild(a);
+    return li;
+  }
+
+  // Build a click-to-play YouTube facade (loads the iframe only on demand).
+  function videoFacade(id) {
+    const wrap = document.createElement("div");
+    wrap.className = "video-facade";
+    wrap.dataset.id = id;
+
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "video-facade__btn";
+    btn.setAttribute("aria-label", "Play featured video");
+
+    const img = document.createElement("img");
+    img.src = "https://i.ytimg.com/vi/" + id + "/hqdefault.jpg";
+    img.alt = "";
+    img.loading = "lazy";
+
+    const play = document.createElement("span");
+    play.className = "video-facade__play";
+    play.setAttribute("aria-hidden", "true");
+    play.textContent = "▶";
+
+    const label = document.createElement("span");
+    label.className = "video-facade__label";
+    label.textContent = "Featured video";
+
+    btn.appendChild(img);
+    btn.appendChild(play);
+    btn.appendChild(label);
+    wrap.appendChild(btn);
+    return wrap;
+  }
+
+  // Render a TopicGroup ({ featuredVideo?, items[] }) into a container.
+  function renderGroup(container, group) {
+    if (!group) return;
+    const head = document.createElement("p");
+    head.className = "res-head";
+    head.textContent = "Learn it";
+    container.appendChild(head);
+
+    if (group.featuredVideo) {
+      container.appendChild(videoFacade(group.featuredVideo));
+    }
+    const ul = document.createElement("ul");
+    ul.className = "res-list";
+    (group.items || []).forEach((item) => ul.appendChild(resourceItem(item, null)));
+    container.appendChild(ul);
+  }
+
+  if (DATA) {
+    // Inline resources under each foundation week and each path week.
+    document.querySelectorAll(".resources").forEach((box) => {
+      const path = box.dataset.path;
+      const week = box.dataset.week;
+      let group;
+      if (path) {
+        group = DATA.paths && DATA.paths[path] && DATA.paths[path][week];
+      } else if (week) {
+        group = DATA.weeks && DATA.weeks[week];
+      }
+      renderGroup(box, group);
+    });
+
+    // Flatten every resource into the Library grid (with origin labels).
+    const grid = document.getElementById("lib-grid");
+    if (grid) {
+      const all = [];
+      Object.keys(DATA.weeks || {}).forEach((w) => {
+        (DATA.weeks[w].items || []).forEach((it) =>
+          all.push({ item: it, origin: "Week " + w })
+        );
+      });
+      Object.keys(DATA.paths || {}).forEach((p) => {
+        Object.keys(DATA.paths[p]).forEach((w) => {
+          (DATA.paths[p][w].items || []).forEach((it) =>
+            all.push({ item: it, origin: (PATH_LABEL[p] || p) + " · W" + w })
+          );
+        });
+      });
+
+      grid.innerHTML = "";
+      const ul = document.createElement("ul");
+      ul.className = "res-list lib-list";
+      all.forEach((row) => ul.appendChild(resourceItem(row.item, row.origin)));
+      grid.appendChild(ul);
+
+      const count = document.querySelector(".lib-count");
+      if (count) count.textContent = all.length + " resources, all free.";
+
+      // Library type filter (reuses the .filter-btn pattern).
+      const rFilterBtns = document.querySelectorAll("[data-rfilter]");
+      rFilterBtns.forEach((fb) => {
+        fb.addEventListener("click", () => {
+          rFilterBtns.forEach((b) => {
+            b.classList.remove("active");
+            b.setAttribute("aria-pressed", "false");
+          });
+          fb.classList.add("active");
+          fb.setAttribute("aria-pressed", "true");
+          const f = fb.dataset.rfilter;
+          ul.querySelectorAll(".res-item").forEach((li) => {
+            const match = f === "all" || li.dataset.type === f;
+            li.classList.toggle("hidden", !match);
+          });
+        });
+      });
+    }
+  }
+
+  // Swap a video facade for the real (privacy-friendly) embed on click.
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".video-facade__btn");
+    if (!btn) return;
+    const wrap = btn.closest(".video-facade");
+    const id = wrap && wrap.dataset.id;
+    if (!id) return;
+    const iframe = document.createElement("iframe");
+    iframe.src =
+      "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0";
+    iframe.title = "Featured video";
+    iframe.allow =
+      "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+    iframe.allowFullscreen = true;
+    iframe.loading = "lazy";
+    wrap.innerHTML = "";
+    wrap.classList.add("playing");
+    wrap.appendChild(iframe);
+  });
 })();
