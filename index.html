@@ -150,7 +150,7 @@
     <section id="paths" class="section reveal">
       <p class="eyebrow">Learning paths</p>
       <h2>Pick where you go deep.</h2>
-      <p class="lede">Four specialisations for weeks 7–8. Same foundation, four different destinations. Expand any path to see the day-by-day breakdown.</p>
+      <p class="lede">Four specialisations for weeks 7–8. Same foundation, four different destinations. Click any card to open its day-by-day breakdown below.</p>
 
       <div class="filters" role="group" aria-label="Filter paths by level">
         <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
@@ -162,7 +162,7 @@
       <div class="path-grid">
 
         <!-- PATH 1 — Data & AI -->
-        <article class="path-card lift stagger" data-level="intermediate">
+        <article class="path-card lift stagger" data-level="intermediate" data-path="data-ai">
           <div class="path-card__head">
             <span class="path-card__icon">▁▃▅▇</span>
             <span class="level-badge" data-level="intermediate">intermediate</span>
@@ -178,42 +178,12 @@
             <li>Communicate findings with clear visualisations</li>
           </ul>
           <div class="path-card__cta">
-            <button class="expand-btn" aria-expanded="false">Explore path <span class="chev">→</span></button>
-          </div>
-          <div class="path-detail">
-            <div class="path-detail__inner"><div class="path-detail__pad">
-              <div class="week-block">
-                <h4>Week 7 — Data wrangling</h4>
-                <ul class="day-list">
-                  <li><span class="day">Mon</span> NumPy arrays — vectorised operations, broadcasting</li>
-                  <li><span class="day">Tue</span> pandas Series &amp; DataFrames — load, inspect, clean</li>
-                  <li><span class="day">Wed</span> Groupby, merge, pivot — real dataset exercises</li>
-                  <li><span class="day">Thu</span> Matplotlib &amp; Seaborn — chart types, when to use each</li>
-                  <li><span class="day">Fri</span> Mini-project work + office hours</li>
-                </ul>
-                <div class="callout"><b>Project</b>Analyse a public dataset (e.g. NYC taxi data). Produce 5 charts and a written summary in a Jupyter notebook.</div>
-                <div class="callout self"><b>Self-learning</b>Find a Kaggle dataset that interests you. Explore it with <code>.describe()</code> and <code>.info()</code> before writing any analysis.</div>
-                <div class="resources" data-path="data-ai" data-week="7"></div>
-              </div>
-              <div class="week-block">
-                <h4>Week 8 — ML fundamentals</h4>
-                <ul class="day-list">
-                  <li><span class="day">Mon</span> scikit-learn API — fit, predict, score. The pipeline metaphor.</li>
-                  <li><span class="day">Tue</span> Regression — linear, polynomial, evaluation metrics (MAE, RMSE)</li>
-                  <li><span class="day">Wed</span> Classification — logistic regression, decision trees, confusion matrix</li>
-                  <li><span class="day">Thu</span> Cross-validation, train/test split, overfitting explained visually</li>
-                  <li><span class="day">Fri</span> Capstone scoping + peer review session</li>
-                </ul>
-                <div class="callout"><b>Project</b>Train a classifier on a labelled dataset. Beat a baseline. Write a model card explaining what it does and doesn't do.</div>
-                <div class="callout self"><b>Self-learning</b>Read the scikit-learn "Choosing the right estimator" flowchart. Justify your model choice in your README.</div>
-                <div class="resources" data-path="data-ai" data-week="8"></div>
-              </div>
-            </div></div>
+            <button class="expand-btn" type="button" aria-expanded="false" aria-controls="path-detail">Explore path <span class="chev">→</span></button>
           </div>
         </article>
 
         <!-- PATH 2 — Web & APIs -->
-        <article class="path-card lift stagger" data-level="beginner">
+        <article class="path-card lift stagger" data-level="beginner" data-path="web-apis">
           <div class="path-card__head">
             <span class="path-card__icon accent">{ }</span>
             <span class="level-badge" data-level="beginner">beginner-friendly</span>
@@ -229,42 +199,12 @@
             <li>Deploy a live service to a public URL</li>
           </ul>
           <div class="path-card__cta">
-            <button class="expand-btn" aria-expanded="false">Explore path <span class="chev">→</span></button>
-          </div>
-          <div class="path-detail">
-            <div class="path-detail__inner"><div class="path-detail__pad">
-              <div class="week-block">
-                <h4>Week 7 — Building REST APIs</h4>
-                <ul class="day-list">
-                  <li><span class="day">Mon</span> HTTP verbs, status codes, REST principles — attack the concepts with curl</li>
-                  <li><span class="day">Tue</span> FastAPI hello world — routes, path params, query params, auto /docs</li>
-                  <li><span class="day">Wed</span> Pydantic models — request validation, response schemas, serialisation</li>
-                  <li><span class="day">Thu</span> Database integration — SQLite + SQLAlchemy ORM, dependency injection</li>
-                  <li><span class="day">Fri</span> Mini-project work + office hours</li>
-                </ul>
-                <div class="callout"><b>Project</b>A fully documented Recipe API with CRUD endpoints, Pydantic schemas, and a SQLite backend. The /docs UI must work.</div>
-                <div class="callout self"><b>Self-learning</b>Browse a real public API (Open-Meteo weather). Map its endpoints to REST principles. Call it with <code>httpx</code>.</div>
-                <div class="resources" data-path="web-apis" data-week="7"></div>
-              </div>
-              <div class="week-block">
-                <h4>Week 8 — Auth, testing, deployment</h4>
-                <ul class="day-list">
-                  <li><span class="day">Mon</span> Password hashing with bcrypt/passlib. JWTs — sign, verify, expire.</li>
-                  <li><span class="day">Tue</span> FastAPI auth flow — OAuth2PasswordBearer, protected routes, current_user</li>
-                  <li><span class="day">Wed</span> pytest + TestClient — test auth flows, fixtures, &gt;80% coverage target</li>
-                  <li><span class="day">Thu</span> Docker basics — Dockerfile, docker-compose with Postgres + Redis</li>
-                  <li><span class="day">Fri</span> Deploy to Render/Railway — live URL by end of day</li>
-                </ul>
-                <div class="callout"><b>Project</b>The Recipe API — with auth, tests, Docker — deployed to a public URL. Submit the live /docs link.</div>
-                <div class="callout self"><b>Self-learning</b>Break your deployed app intentionally. Read the logs to diagnose it. Document what you find.</div>
-                <div class="resources" data-path="web-apis" data-week="8"></div>
-              </div>
-            </div></div>
+            <button class="expand-btn" type="button" aria-expanded="false" aria-controls="path-detail">Explore path <span class="chev">→</span></button>
           </div>
         </article>
 
         <!-- PATH 3 — Automation & Scripts -->
-        <article class="path-card lift stagger" data-level="beginner">
+        <article class="path-card lift stagger" data-level="beginner" data-path="automation">
           <div class="path-card__head">
             <span class="path-card__icon accent">&gt;_</span>
             <span class="level-badge" data-level="beginner">beginner-friendly</span>
@@ -280,42 +220,12 @@
             <li>Ship an unattended scheduled pipeline</li>
           </ul>
           <div class="path-card__cta">
-            <button class="expand-btn" aria-expanded="false">Explore path <span class="chev">→</span></button>
-          </div>
-          <div class="path-detail">
-            <div class="path-detail__inner"><div class="path-detail__pad">
-              <div class="week-block">
-                <h4>Week 7 — CLI tools &amp; file automation</h4>
-                <ul class="day-list">
-                  <li><span class="day">Mon</span> argparse vs click — build a real CLI with subcommands and help text</li>
-                  <li><span class="day">Tue</span> File system automation — pathlib, shutil, glob, batch rename/organise</li>
-                  <li><span class="day">Wed</span> Working with data files — CSV, JSON, Excel (openpyxl), PDF extraction</li>
-                  <li><span class="day">Thu</span> Web scraping — requests + BeautifulSoup, ethics, robots.txt, rate limiting</li>
-                  <li><span class="day">Fri</span> Mini-project work + office hours</li>
-                </ul>
-                <div class="callout"><b>Project</b>A CLI tool that scrapes a public website and outputs a structured CSV report. Must handle errors gracefully and have a --help flag.</div>
-                <div class="callout self"><b>Self-learning</b>Find a repetitive task you do manually. Write a script that does it. Time both.</div>
-                <div class="resources" data-path="automation" data-week="7"></div>
-              </div>
-              <div class="week-block">
-                <h4>Week 8 — Bots, scheduling &amp; APIs</h4>
-                <ul class="day-list">
-                  <li><span class="day">Mon</span> schedule and APScheduler — run tasks at intervals, cron expressions</li>
-                  <li><span class="day">Tue</span> Telegram / Discord bot basics — bot tokens, message handlers, commands</li>
-                  <li><span class="day">Wed</span> Email automation — smtplib, email MIME, HTML templates, attachments</li>
-                  <li><span class="day">Thu</span> Putting it together — trigger → fetch → process → notify pipeline</li>
-                  <li><span class="day">Fri</span> Capstone scoping + demo prep</li>
-                </ul>
-                <div class="callout"><b>Project</b>An automated pipeline: scheduled fetch from an API → process/filter → send a formatted email or Telegram message. Must run unattended for 24 hours.</div>
-                <div class="callout self"><b>Self-learning</b>Read the Telegram bot API docs. Note how they handle webhooks vs polling — and why.</div>
-                <div class="resources" data-path="automation" data-week="8"></div>
-              </div>
-            </div></div>
+            <button class="expand-btn" type="button" aria-expanded="false" aria-controls="path-detail">Explore path <span class="chev">→</span></button>
           </div>
         </article>
 
         <!-- PATH 4 — Systems & CS -->
-        <article class="path-card lift stagger" data-level="advanced">
+        <article class="path-card lift stagger" data-level="advanced" data-path="systems-cs">
           <div class="path-card__head">
             <span class="path-card__icon accent">O(n)</span>
             <span class="level-badge" data-level="advanced">advanced</span>
@@ -331,40 +241,157 @@
             <li>Build concurrent, benchmarked pipelines</li>
           </ul>
           <div class="path-card__cta">
-            <button class="expand-btn" aria-expanded="false">Explore path <span class="chev">→</span></button>
-          </div>
-          <div class="path-detail">
-            <div class="path-detail__inner"><div class="path-detail__pad">
-              <div class="week-block">
-                <h4>Week 7 — Data structures &amp; algorithms</h4>
-                <ul class="day-list">
-                  <li><span class="day">Mon</span> Big O intuition — arrays, linked lists, hash maps, trees with visual comparisons</li>
-                  <li><span class="day">Tue</span> Implement from scratch — stack, queue, linked list, binary search tree in Python</li>
-                  <li><span class="day">Wed</span> Sorting — insertion, merge, quicksort. When each is the right call.</li>
-                  <li><span class="day">Thu</span> Graph algorithms — BFS, DFS, Dijkstra with real use cases</li>
-                  <li><span class="day">Fri</span> Mini-project work + office hours (LeetCode-style problems)</li>
-                </ul>
-                <div class="callout"><b>Project</b>Solve 10 curated algorithm problems. For each: working solution, Big O analysis, and an alternative approach with trade-off notes.</div>
-                <div class="callout self"><b>Self-learning</b>Visualise one algorithm using Python turtle or matplotlib animations. Seeing it run cements it.</div>
-                <div class="resources" data-path="systems-cs" data-week="7"></div>
-              </div>
-              <div class="week-block">
-                <h4>Week 8 — Concurrency &amp; architecture</h4>
-                <ul class="day-list">
-                  <li><span class="day">Mon</span> Threading vs multiprocessing vs asyncio — the mental model, GIL explained</li>
-                  <li><span class="day">Tue</span> asyncio deep dive — event loop, tasks, gather, real async HTTP client</li>
-                  <li><span class="day">Wed</span> concurrent.futures — ThreadPoolExecutor, ProcessPoolExecutor, when to use</li>
-                  <li><span class="day">Thu</span> Software design — SOLID principles, dependency injection, clean architecture in Python</li>
-                  <li><span class="day">Fri</span> Capstone scoping + code review session</li>
-                </ul>
-                <div class="callout"><b>Project</b>A concurrent data pipeline — fetch from 20+ URLs simultaneously with asyncio, process with multiprocessing, output a structured report. Benchmark against the synchronous version.</div>
-                <div class="callout self"><b>Self-learning</b>Profile your pipeline with cProfile. Find the bottleneck. Try to remove it.</div>
-                <div class="resources" data-path="systems-cs" data-week="8"></div>
-              </div>
-            </div></div>
+            <button class="expand-btn" type="button" aria-expanded="false" aria-controls="path-detail">Explore path <span class="chev">→</span></button>
           </div>
         </article>
 
+      </div>
+    </section>
+
+    <!-- ===================== PATH DETAIL (opens under Paths) ===================== -->
+    <section id="path-detail" class="section pd-section" aria-labelledby="pd-title" hidden>
+      <div class="pd-head">
+        <div class="pd-head__text">
+          <p class="eyebrow">Path detail</p>
+          <h2 id="pd-title" tabindex="-1">Data &amp; AI</h2>
+          <p class="pd-meta"></p>
+        </div>
+        <button class="pd-close" type="button" aria-label="Close path detail">Close <span class="x" aria-hidden="true">×</span></button>
+      </div>
+
+      <div class="pd-switch" role="group" aria-label="Switch path">
+        <button class="pd-switch__btn" type="button" data-goto="data-ai">Data &amp; AI</button>
+        <button class="pd-switch__btn" type="button" data-goto="web-apis">Web &amp; APIs</button>
+        <button class="pd-switch__btn" type="button" data-goto="automation">Automation</button>
+        <button class="pd-switch__btn" type="button" data-goto="systems-cs">Systems &amp; CS</button>
+      </div>
+
+      <!-- PANEL — Data & AI -->
+      <div class="path-panel" data-path="data-ai" hidden>
+        <div class="pd-weeks">
+          <div class="week-block">
+            <h4>Week 7 — Data wrangling</h4>
+            <ul class="day-list">
+              <li><span class="day">Mon</span> NumPy arrays — vectorised operations, broadcasting</li>
+              <li><span class="day">Tue</span> pandas Series &amp; DataFrames — load, inspect, clean</li>
+              <li><span class="day">Wed</span> Groupby, merge, pivot — real dataset exercises</li>
+              <li><span class="day">Thu</span> Matplotlib &amp; Seaborn — chart types, when to use each</li>
+              <li><span class="day">Fri</span> Mini-project work + office hours</li>
+            </ul>
+            <div class="callout"><b>Project</b>Analyse a public dataset (e.g. NYC taxi data). Produce 5 charts and a written summary in a Jupyter notebook.</div>
+            <div class="callout self"><b>Self-learning</b>Find a Kaggle dataset that interests you. Explore it with <code>.describe()</code> and <code>.info()</code> before writing any analysis.</div>
+            <div class="resources" data-path="data-ai" data-week="7"></div>
+          </div>
+          <div class="week-block">
+            <h4>Week 8 — ML fundamentals</h4>
+            <ul class="day-list">
+              <li><span class="day">Mon</span> scikit-learn API — fit, predict, score. The pipeline metaphor.</li>
+              <li><span class="day">Tue</span> Regression — linear, polynomial, evaluation metrics (MAE, RMSE)</li>
+              <li><span class="day">Wed</span> Classification — logistic regression, decision trees, confusion matrix</li>
+              <li><span class="day">Thu</span> Cross-validation, train/test split, overfitting explained visually</li>
+              <li><span class="day">Fri</span> Capstone scoping + peer review session</li>
+            </ul>
+            <div class="callout"><b>Project</b>Train a classifier on a labelled dataset. Beat a baseline. Write a model card explaining what it does and doesn't do.</div>
+            <div class="callout self"><b>Self-learning</b>Read the scikit-learn "Choosing the right estimator" flowchart. Justify your model choice in your README.</div>
+            <div class="resources" data-path="data-ai" data-week="8"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL — Web & APIs -->
+      <div class="path-panel" data-path="web-apis" hidden>
+        <div class="pd-weeks">
+          <div class="week-block">
+            <h4>Week 7 — Building REST APIs</h4>
+            <ul class="day-list">
+              <li><span class="day">Mon</span> HTTP verbs, status codes, REST principles — attack the concepts with curl</li>
+              <li><span class="day">Tue</span> FastAPI hello world — routes, path params, query params, auto /docs</li>
+              <li><span class="day">Wed</span> Pydantic models — request validation, response schemas, serialisation</li>
+              <li><span class="day">Thu</span> Database integration — SQLite + SQLAlchemy ORM, dependency injection</li>
+              <li><span class="day">Fri</span> Mini-project work + office hours</li>
+            </ul>
+            <div class="callout"><b>Project</b>A fully documented Recipe API with CRUD endpoints, Pydantic schemas, and a SQLite backend. The /docs UI must work.</div>
+            <div class="callout self"><b>Self-learning</b>Browse a real public API (Open-Meteo weather). Map its endpoints to REST principles. Call it with <code>httpx</code>.</div>
+            <div class="resources" data-path="web-apis" data-week="7"></div>
+          </div>
+          <div class="week-block">
+            <h4>Week 8 — Auth, testing, deployment</h4>
+            <ul class="day-list">
+              <li><span class="day">Mon</span> Password hashing with bcrypt/passlib. JWTs — sign, verify, expire.</li>
+              <li><span class="day">Tue</span> FastAPI auth flow — OAuth2PasswordBearer, protected routes, current_user</li>
+              <li><span class="day">Wed</span> pytest + TestClient — test auth flows, fixtures, &gt;80% coverage target</li>
+              <li><span class="day">Thu</span> Docker basics — Dockerfile, docker-compose with Postgres + Redis</li>
+              <li><span class="day">Fri</span> Deploy to Render/Railway — live URL by end of day</li>
+            </ul>
+            <div class="callout"><b>Project</b>The Recipe API — with auth, tests, Docker — deployed to a public URL. Submit the live /docs link.</div>
+            <div class="callout self"><b>Self-learning</b>Break your deployed app intentionally. Read the logs to diagnose it. Document what you find.</div>
+            <div class="resources" data-path="web-apis" data-week="8"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL — Automation & Scripts -->
+      <div class="path-panel" data-path="automation" hidden>
+        <div class="pd-weeks">
+          <div class="week-block">
+            <h4>Week 7 — CLI tools &amp; file automation</h4>
+            <ul class="day-list">
+              <li><span class="day">Mon</span> argparse vs click — build a real CLI with subcommands and help text</li>
+              <li><span class="day">Tue</span> File system automation — pathlib, shutil, glob, batch rename/organise</li>
+              <li><span class="day">Wed</span> Working with data files — CSV, JSON, Excel (openpyxl), PDF extraction</li>
+              <li><span class="day">Thu</span> Web scraping — requests + BeautifulSoup, ethics, robots.txt, rate limiting</li>
+              <li><span class="day">Fri</span> Mini-project work + office hours</li>
+            </ul>
+            <div class="callout"><b>Project</b>A CLI tool that scrapes a public website and outputs a structured CSV report. Must handle errors gracefully and have a --help flag.</div>
+            <div class="callout self"><b>Self-learning</b>Find a repetitive task you do manually. Write a script that does it. Time both.</div>
+            <div class="resources" data-path="automation" data-week="7"></div>
+          </div>
+          <div class="week-block">
+            <h4>Week 8 — Bots, scheduling &amp; APIs</h4>
+            <ul class="day-list">
+              <li><span class="day">Mon</span> schedule and APScheduler — run tasks at intervals, cron expressions</li>
+              <li><span class="day">Tue</span> Telegram / Discord bot basics — bot tokens, message handlers, commands</li>
+              <li><span class="day">Wed</span> Email automation — smtplib, email MIME, HTML templates, attachments</li>
+              <li><span class="day">Thu</span> Putting it together — trigger → fetch → process → notify pipeline</li>
+              <li><span class="day">Fri</span> Capstone scoping + demo prep</li>
+            </ul>
+            <div class="callout"><b>Project</b>An automated pipeline: scheduled fetch from an API → process/filter → send a formatted email or Telegram message. Must run unattended for 24 hours.</div>
+            <div class="callout self"><b>Self-learning</b>Read the Telegram bot API docs. Note how they handle webhooks vs polling — and why.</div>
+            <div class="resources" data-path="automation" data-week="8"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL — Systems & CS -->
+      <div class="path-panel" data-path="systems-cs" hidden>
+        <div class="pd-weeks">
+          <div class="week-block">
+            <h4>Week 7 — Data structures &amp; algorithms</h4>
+            <ul class="day-list">
+              <li><span class="day">Mon</span> Big O intuition — arrays, linked lists, hash maps, trees with visual comparisons</li>
+              <li><span class="day">Tue</span> Implement from scratch — stack, queue, linked list, binary search tree in Python</li>
+              <li><span class="day">Wed</span> Sorting — insertion, merge, quicksort. When each is the right call.</li>
+              <li><span class="day">Thu</span> Graph algorithms — BFS, DFS, Dijkstra with real use cases</li>
+              <li><span class="day">Fri</span> Mini-project work + office hours (LeetCode-style problems)</li>
+            </ul>
+            <div class="callout"><b>Project</b>Solve 10 curated algorithm problems. For each: working solution, Big O analysis, and an alternative approach with trade-off notes.</div>
+            <div class="callout self"><b>Self-learning</b>Visualise one algorithm using Python turtle or matplotlib animations. Seeing it run cements it.</div>
+            <div class="resources" data-path="systems-cs" data-week="7"></div>
+          </div>
+          <div class="week-block">
+            <h4>Week 8 — Concurrency &amp; architecture</h4>
+            <ul class="day-list">
+              <li><span class="day">Mon</span> Threading vs multiprocessing vs asyncio — the mental model, GIL explained</li>
+              <li><span class="day">Tue</span> asyncio deep dive — event loop, tasks, gather, real async HTTP client</li>
+              <li><span class="day">Wed</span> concurrent.futures — ThreadPoolExecutor, ProcessPoolExecutor, when to use</li>
+              <li><span class="day">Thu</span> Software design — SOLID principles, dependency injection, clean architecture in Python</li>
+              <li><span class="day">Fri</span> Capstone scoping + code review session</li>
+            </ul>
+            <div class="callout"><b>Project</b>A concurrent data pipeline — fetch from 20+ URLs simultaneously with asyncio, process with multiprocessing, output a structured report. Benchmark against the synchronous version.</div>
+            <div class="callout self"><b>Self-learning</b>Profile your pipeline with cProfile. Find the bottleneck. Try to remove it.</div>
+            <div class="resources" data-path="systems-cs" data-week="8"></div>
+          </div>
+        </div>
       </div>
     </section>
 

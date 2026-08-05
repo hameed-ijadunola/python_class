@@ -28,23 +28,99 @@
     a.addEventListener("click", () => body.classList.remove("nav-open"))
   );
 
-  /* ----- Path accordion (one open at a time) ----------------------------- */
+  /* ----- Path detail (opens in its own section below the grid) ----------- */
   const pathCards = document.querySelectorAll(".path-card");
-  pathCards.forEach((card) => {
-    const btn = card.querySelector(".expand-btn");
-    if (!btn) return;
-    btn.addEventListener("click", () => {
-      const isOpen = card.classList.contains("open");
-      pathCards.forEach((c) => {
-        c.classList.remove("open");
-        const b = c.querySelector(".expand-btn");
-        if (b) b.setAttribute("aria-expanded", "false");
-      });
-      if (!isOpen) {
-        card.classList.add("open");
-        btn.setAttribute("aria-expanded", "true");
-      }
+  const pdSection = document.getElementById("path-detail");
+  const pdTitle = pdSection && pdSection.querySelector("#pd-title");
+  const pdMeta = pdSection && pdSection.querySelector(".pd-meta");
+  const pdPanels = pdSection ? pdSection.querySelectorAll(".path-panel") : [];
+  const pdSwitchBtns = pdSection ? pdSection.querySelectorAll(".pd-switch__btn") : [];
+  let openPath = null;
+
+  const cardFor = (path) =>
+    document.querySelector('.path-card[data-path="' + path + '"]');
+
+  // Header text comes from the card, so the card stays the single source of truth.
+  function fillHeader(card) {
+    const h3 = card.querySelector("h3");
+    const dur = card.querySelector(".dur");
+    const level = card.querySelector(".level-badge");
+    if (pdTitle && h3) pdTitle.textContent = h3.textContent;
+    if (!pdMeta) return;
+    pdMeta.innerHTML = "";
+    if (dur) pdMeta.appendChild(document.createTextNode(dur.textContent));
+    if (level) {
+      const sep = document.createElement("span");
+      sep.className = "sep";
+      sep.textContent = "·";
+      pdMeta.appendChild(sep);
+      pdMeta.appendChild(level.cloneNode(true));
+    }
+  }
+
+  function openPathDetail(path, opts) {
+    const card = cardFor(path);
+    if (!pdSection || !card) return;
+    const scroll = !opts || opts.scroll !== false;
+
+    fillHeader(card);
+    pdPanels.forEach((p) => { p.hidden = p.dataset.path !== path; });
+    pdSwitchBtns.forEach((b) => {
+      const on = b.dataset.goto === path;
+      b.classList.toggle("active", on);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
     });
+    pathCards.forEach((c) => {
+      const on = c.dataset.path === path;
+      c.classList.toggle("active", on);
+      const b = c.querySelector(".expand-btn");
+      if (b) b.setAttribute("aria-expanded", on ? "true" : "false");
+    });
+
+    pdSection.hidden = false;
+    openPath = path;
+
+    if (scroll) {
+      // Focus the heading for screen readers, then let the browser scroll to it.
+      if (pdTitle) pdTitle.focus({ preventScroll: true });
+      pdSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+
+  function closePathDetail(refocus) {
+    if (!pdSection || pdSection.hidden) return;
+    const last = openPath;
+    pdSection.hidden = true;
+    openPath = null;
+    pathCards.forEach((c) => {
+      c.classList.remove("active");
+      const b = c.querySelector(".expand-btn");
+      if (b) b.setAttribute("aria-expanded", "false");
+    });
+    if (refocus && last) {
+      const card = cardFor(last);
+      const btn = card && card.querySelector(".expand-btn");
+      if (btn) btn.focus();
+    }
+  }
+
+  // Anywhere on the card — including the "Explore path" button — opens the path.
+  pathCards.forEach((card) => {
+    card.addEventListener("click", (e) => {
+      if (e.target.closest("a")) return;
+      openPathDetail(card.dataset.path);
+    });
+  });
+
+  pdSwitchBtns.forEach((b) =>
+    b.addEventListener("click", () => openPathDetail(b.dataset.goto))
+  );
+
+  const pdClose = pdSection && pdSection.querySelector(".pd-close");
+  if (pdClose) pdClose.addEventListener("click", () => closePathDetail(true));
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closePathDetail(true);
   });
 
   /* ----- Path filter ----------------------------------------------------- */
@@ -61,6 +137,8 @@
       pathCards.forEach((card) => {
         const match = filter === "all" || card.dataset.level === filter;
         card.classList.toggle("hidden", !match);
+        // Don't leave a detail open for a path the filter just hid.
+        if (!match && card.dataset.path === openPath) closePathDetail(false);
       });
     });
   });
@@ -154,9 +232,12 @@
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            navLinks.forEach((l) => l.classList.remove("active"));
+            // Sections without a nav entry (#how, #path-detail) keep the
+            // current highlight rather than clearing it.
             const link = linkFor(entry.target.id);
-            if (link) link.classList.add("active");
+            if (!link) return;
+            navLinks.forEach((l) => l.classList.remove("active"));
+            link.classList.add("active");
           }
         });
       },
