@@ -168,7 +168,10 @@ live in `js/main.js` (search for `RESOURCES`). Inline placeholders in
 `<div class="resources" data-path="slug" data-week="N">` (paths).
 
 > **Curation rule of thumb:** official docs → authoritative tutorial → quality
-> free video → free book. Keep it to ~4 per group, all free, no paywalls.
+> free video → free book. Keep it to ~4 per foundation week and ~7 per
+> specialisation week (7–8), all free, no paywalls. Each specialisation week
+> leads with a **short (2–21 min) introductory video**, listed first and
+> mirrored as that group's `featuredVideo`.
 
 ### Updating the pie chart
 

@@ -31,7 +31,11 @@
      official docs  >  authoritative tutorial (Real Python …)  >
      quality free video (Corey Schafer, ArjanCodes, freeCodeCamp)  >
      free book (Automate the Boring Stuff, Pro Git).
-   Max ~4 per group. Everything must be free with no paywall.
+   Keep it to ~4 per foundation week; specialisation weeks (7–8) run to ~7
+   because each one has to cover a whole discipline in five days.
+   Every specialisation group leads with a SHORT (2–21 min) introductory
+   video — listed first, and mirrored as that group's featuredVideo — so the
+   week opens with orientation before the docs. Everything must be free.
    =========================================================================== */
 (function () {
   "use strict";
@@ -252,14 +256,22 @@
     paths: {
       "data-ai": {
         7: {
+          featuredVideo: "_T8LGqJtuGc", // Wes McKinney — pandas in 10 minutes (10 min)
           items: [
+            {
+              title: "pandas in 10 minutes — by the author of pandas",
+              source: "PyData · Wes McKinney",
+              type: "video",
+              url: "https://www.youtube.com/watch?v=_T8LGqJtuGc",
+              note: "10 min. Watch first — the whole week in one sitting.",
+              start: true
+            },
             {
               title: "NumPy: the absolute basics for beginners",
               source: "numpy.org",
               type: "docs",
               url: "https://numpy.org/doc/stable/user/absolute_beginners.html",
-              note: "Arrays, vectorisation and broadcasting from zero.",
-              start: true
+              note: "Arrays, vectorisation and broadcasting from zero."
             },
             {
               title: "10 minutes to pandas",
@@ -280,18 +292,40 @@
               source: "matplotlib.org",
               type: "docs",
               url: "https://matplotlib.org/stable/users/explain/quick_start.html"
+            },
+            {
+              title: "pandas GroupBy: Your Guide to Grouping Data",
+              source: "Real Python",
+              type: "article",
+              url: "https://realpython.com/pandas-groupby/",
+              note: "Split-apply-combine — exactly Wednesday's groupby/merge/pivot."
+            },
+            {
+              title: "seaborn — official tutorial",
+              source: "seaborn.pydata.org",
+              type: "docs",
+              url: "https://seaborn.pydata.org/tutorial.html",
+              note: "Which chart answers which question, code alongside."
             }
           ]
         },
         8: {
+          featuredVideo: "Gv9_4yMHFhI", // StatQuest — A gentle introduction to machine learning (13 min)
           items: [
+            {
+              title: "A Gentle Introduction to Machine Learning",
+              source: "StatQuest",
+              type: "video",
+              url: "https://www.youtube.com/watch?v=Gv9_4yMHFhI",
+              note: "13 min. Training, testing and overfitting before any code.",
+              start: true
+            },
             {
               title: "scikit-learn — Getting Started",
               source: "scikit-learn.org",
               type: "docs",
               url: "https://scikit-learn.org/stable/getting_started.html",
-              note: "fit / predict / score and the Pipeline idea.",
-              start: true
+              note: "fit / predict / score and the Pipeline idea."
             },
             {
               title: "Choosing the right estimator (the flowchart)",
@@ -312,6 +346,20 @@
               type: "article",
               url: "https://realpython.com/train-test-split-python-data/",
               note: "Overfitting made concrete — the heart of Thursday."
+            },
+            {
+              title: "Metrics and scoring — evaluating predictions",
+              source: "scikit-learn.org",
+              type: "docs",
+              url: "https://scikit-learn.org/stable/modules/model_evaluation.html",
+              note: "MAE, RMSE and the confusion matrix, all in one reference."
+            },
+            {
+              title: "Model Cards — what to document",
+              source: "Hugging Face",
+              type: "docs",
+              url: "https://huggingface.co/docs/hub/model-cards",
+              note: "The shape of the model card this week's project asks for."
             }
           ]
         }
@@ -319,14 +367,22 @@
 
       "web-apis": {
         7: {
+          featuredVideo: "SORiTsvnU28", // ArjanCodes — How to use FastAPI (21 min)
           items: [
+            {
+              title: "How to Use FastAPI — a detailed introduction",
+              source: "ArjanCodes",
+              type: "video",
+              url: "https://www.youtube.com/watch?v=SORiTsvnU28",
+              note: "21 min. Routes, models and /docs, built in front of you.",
+              start: true
+            },
             {
               title: "FastAPI — official tutorial",
               source: "fastapi.tiangolo.com",
               type: "docs",
               url: "https://fastapi.tiangolo.com/tutorial/",
-              note: "Genuinely the best docs in Python. Do it in order.",
-              start: true
+              note: "Genuinely the best docs in Python. Do it in order."
             },
             {
               title: "Pydantic — documentation",
@@ -347,18 +403,40 @@
               source: "Real Python",
               type: "article",
               url: "https://realpython.com/fastapi-python-web-apis/"
+            },
+            {
+              title: "FastAPI — SQL (relational) databases",
+              source: "fastapi.tiangolo.com",
+              type: "docs",
+              url: "https://fastapi.tiangolo.com/tutorial/sql-databases/",
+              note: "Thursday's ORM + dependency-injection day, start to finish."
+            },
+            {
+              title: "HTTPX — a modern HTTP client",
+              source: "python-httpx.org",
+              type: "docs",
+              url: "https://www.python-httpx.org/",
+              note: "What you'll call the Open-Meteo API with in the self-learning."
             }
           ]
         },
         8: {
+          featuredVideo: "Gjnup-PuquQ", // Fireship — Docker in 100 seconds (2 min)
           items: [
+            {
+              title: "Docker in 100 Seconds",
+              source: "Fireship",
+              type: "video",
+              url: "https://www.youtube.com/watch?v=Gjnup-PuquQ",
+              note: "2 min. Images, containers and Dockerfiles, orientation first.",
+              start: true
+            },
             {
               title: "FastAPI — Security & OAuth2 with JWT",
               source: "fastapi.tiangolo.com",
               type: "docs",
               url: "https://fastapi.tiangolo.com/tutorial/security/",
-              note: "Hashing, tokens, protected routes, current_user.",
-              start: true
+              note: "Hashing, tokens, protected routes, current_user."
             },
             {
               title: "Introduction to JSON Web Tokens",
@@ -380,6 +458,20 @@
               type: "docs",
               url: "https://render.com/docs/deploy-fastapi",
               note: "Get a live /docs URL by Friday."
+            },
+            {
+              title: "FastAPI — Testing with TestClient",
+              source: "fastapi.tiangolo.com",
+              type: "docs",
+              url: "https://fastapi.tiangolo.com/tutorial/testing/",
+              note: "Test the auth flow itself — Wednesday's coverage target."
+            },
+            {
+              title: "Containerise a Python application",
+              source: "docs.docker.com",
+              type: "docs",
+              url: "https://docs.docker.com/language/python/",
+              note: "Dockerfile → compose, written for Python specifically."
             }
           ]
         }
@@ -387,14 +479,22 @@
 
       "automation": {
         7: {
+          featuredVideo: "vJIXr4Kx5oo", // Carberra — Creating CLIs in Python with Click (15 min)
           items: [
+            {
+              title: "Creating CLIs in Python with Click",
+              source: "Carberra",
+              type: "video",
+              url: "https://www.youtube.com/watch?v=vJIXr4Kx5oo",
+              note: "15 min. Monday's argparse-vs-click question, answered.",
+              start: true
+            },
             {
               title: "Automate the Boring Stuff with Python — free book",
               source: "Al Sweigart",
               type: "book",
               url: "https://automatetheboringstuff.com/",
-              note: "The definitive automation text. Read it free online.",
-              start: true
+              note: "The definitive automation text. Read it free online."
             },
             {
               title: "Build a CLI with Click",
@@ -416,18 +516,40 @@
               type: "article",
               url: "https://realpython.com/beautiful-soup-web-scraper-python/",
               note: "Includes robots.txt ethics & rate-limiting."
+            },
+            {
+              title: "Excel spreadsheets in Python with openpyxl",
+              source: "Real Python",
+              type: "article",
+              url: "https://realpython.com/openpyxl-excel-spreadsheets-python/",
+              note: "Wednesday's Excel half — read, write, style, chart."
+            },
+            {
+              title: "Requests — HTTP for humans",
+              source: "requests.readthedocs.io",
+              type: "docs",
+              url: "https://requests.readthedocs.io/en/latest/",
+              note: "Sessions, timeouts, headers — how to scrape politely."
             }
           ]
         },
         8: {
+          featuredVideo: "yDPQfj4bZY8", // NeuralNine — Scheduling tasks professionally in Python (14 min)
           items: [
+            {
+              title: "Scheduling Tasks Professionally in Python",
+              source: "NeuralNine",
+              type: "video",
+              url: "https://www.youtube.com/watch?v=yDPQfj4bZY8",
+              note: "14 min. schedule and APScheduler side by side.",
+              start: true
+            },
             {
               title: "schedule — human-friendly job scheduling",
               source: "schedule.readthedocs.io",
               type: "docs",
               url: "https://schedule.readthedocs.io/en/stable/",
-              note: "Run tasks at intervals in a few lines.",
-              start: true
+              note: "Run tasks at intervals in a few lines."
             },
             {
               title: "APScheduler — cron-style scheduling",
@@ -449,6 +571,20 @@
               type: "docs",
               url: "https://core.telegram.org/bots/api",
               note: "Note how webhooks vs. polling differ — and why."
+            },
+            {
+              title: "python-telegram-bot — documentation",
+              source: "docs.python-telegram-bot.org",
+              type: "docs",
+              url: "https://docs.python-telegram-bot.org/",
+              note: "The library you'll actually write Tuesday's handlers in."
+            },
+            {
+              title: "crontab.guru — cron expressions decoded",
+              source: "crontab.guru",
+              type: "docs",
+              url: "https://crontab.guru/",
+              note: "Type a schedule, read it back in plain English."
             }
           ]
         }
@@ -456,14 +592,22 @@
 
       "systems-cs": {
         7: {
+          featuredVideo: "XMUe3zFhM5c", // Bro Code — Learn Big O notation in 6 minutes
           items: [
+            {
+              title: "Learn Big O notation in 6 minutes",
+              source: "Bro Code",
+              type: "video",
+              url: "https://www.youtube.com/watch?v=XMUe3zFhM5c",
+              note: "6 min. The vocabulary for the rest of the week.",
+              start: true
+            },
             {
               title: "Common Python Data Structures (Guide)",
               source: "Real Python",
               type: "article",
               url: "https://realpython.com/python-data-structures/",
-              note: "Before you implement them, know what Python already gives you.",
-              start: true
+              note: "Before you implement them, know what Python already gives you."
             },
             {
               title: "Big-O Cheat Sheet",
@@ -485,19 +629,47 @@
               type: "article",
               url: "https://realpython.com/sorting-algorithms-python/",
               note: "Insertion, merge, quicksort — with benchmarks."
+            },
+            {
+              title: "TimeComplexity — Python Wiki",
+              source: "wiki.python.org",
+              type: "docs",
+              url: "https://wiki.python.org/moin/TimeComplexity",
+              note: "Big O of list, dict and set operations, from the source."
+            },
+            {
+              title: "Problem Solving with Algorithms & Data Structures",
+              source: "Runestone Academy",
+              type: "book",
+              url: "https://runestone.academy/ns/books/published/pythonds3/index.html",
+              note: "Free interactive book — run each structure in the page."
             }
           ]
         },
         8: {
-          featuredVideo: "pTB30aXS77U", // ArjanCodes — SOLID in Python
+          featuredVideo: "q_yk3oV14hE", // NeuralNine — Python asyncio explained in 9 minutes
           items: [
+            {
+              title: "Python AsyncIO Explained in 9 Minutes",
+              source: "NeuralNine",
+              type: "video",
+              url: "https://www.youtube.com/watch?v=q_yk3oV14hE",
+              note: "9 min. The event loop, before Tuesday's deep dive.",
+              start: true
+            },
+            {
+              title: "Uncle Bob's SOLID Principles — in Python",
+              source: "ArjanCodes",
+              type: "video",
+              url: "https://www.youtube.com/watch?v=pTB30aXS77U",
+              note: "19 min. Thursday's design principles, worked in Python."
+            },
             {
               title: "Async IO in Python: A Complete Walkthrough",
               source: "Real Python",
               type: "article",
               url: "https://realpython.com/async-io-python/",
-              note: "Event loop, tasks, gather — the mental model first.",
-              start: true
+              note: "Event loop, tasks, gather — the mental model first."
             },
             {
               title: "Threading vs multiprocessing vs asyncio",
@@ -513,10 +685,18 @@
               url: "https://docs.python.org/3/library/concurrent.futures.html"
             },
             {
-              title: "Uncle Bob's SOLID Principles — in Python",
-              source: "ArjanCodes",
-              type: "video",
-              url: "https://www.youtube.com/watch?v=pTB30aXS77U"
+              title: "asyncio — Asynchronous I/O",
+              source: "docs.python.org",
+              type: "docs",
+              url: "https://docs.python.org/3/library/asyncio.html",
+              note: "The reference behind Tuesday: event loop, tasks, gather."
+            },
+            {
+              title: "The Python Profilers — cProfile",
+              source: "docs.python.org",
+              type: "docs",
+              url: "https://docs.python.org/3/library/profile.html",
+              note: "Find the bottleneck the self-learning prompt sends you after."
             }
           ]
         }
